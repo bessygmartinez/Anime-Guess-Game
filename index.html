@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap" rel="stylesheet">
 
@@ -14,23 +15,33 @@
 
     <title>Guess the Anime Title!</title>
 </head>
-<body style="background: url('assets/images/wild-sea.png')">
-    <div class="container mt-5 bg-transparent">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-            <h1 class="text-light display-1" style="font-family: 'Maven Pro', sans-serif;">guess the anime title</h1>
+
+<body class="bg-dark">
+    <div class="container mt-5 bg-warning border-thick p-5">
+        <div class="row bg-transparent">
+            <div class="col-sm-12 text-center bg-transparent">
+                <h1 class="text-light display-1">guess the anime title</h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-6 border mx-auto">
-                <p>left</p>
+            <div class="col-sm-12 text-center my-3 animeTitle">
+                <h1 class="text-light">Naruto!</h1>
             </div>
-            <div class="col-sm-6 border mx-auto">
+        </div>
+
+        <div class="row border border-secondary">
+            <div class="col-sm-6 bg-light text-center p-4">
+                <div><img src="assets/images/animegirl_questionmark.png" class="bg-dark border border-dark img-fluid"
+                        alt="Anime girl with a question mark" width="200"></div>
+            </div>
+
+            <div class="col-sm-6 mx-auto bg-light p-4">
                 <p>right</p>
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
