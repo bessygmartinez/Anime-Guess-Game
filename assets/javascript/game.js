@@ -58,7 +58,7 @@ for (var i = 0; i < animeTitles[currentTitleIndex].length; i++) {
 //Hides game over or win images/text
 document.getElementById("tryAgain").style.cssText = "display: none";
 document.getElementById("gameOverImg").style.cssText = "display: none";
-document.getElementById("youWinImg ").style.cssText = "display: none";
+document.getElementById("youWinImg").style.cssText = "display: none";
 
 //To update display on the HTML
 function updateDisplay() {
@@ -69,7 +69,7 @@ function updateDisplay() {
     }
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
-    if(remainingGuesses <= 0) {
+    if (remainingGuesses <= 0) {
         document.getElementById("gameOverImg").style.cssText = "display: block";
         document.getElementById("tryAgain").style.cssText = "display: blcok";
         hasFinished = true;
@@ -78,3 +78,69 @@ function updateDisplay() {
 
 //Display
 updateDisplay();
+
+//Function to take the letter and find instances of it in the current title
+function evaluateGuess(letter) {
+
+    //Variable to store positions of letters in the title
+    let positions = [];
+
+    //loop through the title to find instances of the guessed letter and stores the index in an array
+    for (var i = 0; i < animeTitles[currentTitleIndex].lenth; i++) {
+        if (animeTitles[currentTitleIndex][i] === letter) {
+            positions.push(i);
+        }
+    }
+
+    //if there are no index, remove a guess
+    if (positions.length <= ) {
+        remainingGuesses--;
+    }
+
+    //if there is an index found, replace the _ with that letter
+    else {
+        for(var i=0; i < positions.lenth; i++) {
+            guessingTitle[positions[i]] = letter;
+        }
+    }
+};
+
+//Function in order to compare value of key press to current title
+function makeGuess(letter) {
+    if (remainingGuesses > 0) {
+        if (!gameStarted) {
+            gameStarted = true;
+        }
+
+        //To make sure letter hasn't been already used
+        if (guessedLetters.indexOf(letter) === -1) {
+            guessedLetters.push(letter);
+            evaluateGuess(letter);
+        }
+    }
+
+    updateDisplay();
+    checkWin();
+}
+
+//Checking for a win to see if letters match
+function checkWin() {
+    if (guessingTitle.indexOf("_") === -1) {
+        document.getElementById("youWinImg").style.cssText = "display:block";
+        document.getElementById("tryAgain").style.cssText = "display:block";
+        wins++;
+        hasFinished = true;
+    }
+};
+
+document.onkeyup = function (event) {
+    if (hasFinished) {
+        resetGame();
+        hasFinished = false;
+    }
+    else {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            makeGuess(event.key.toLowerCase());
+        }
+    }
+};
