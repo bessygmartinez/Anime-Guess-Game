@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap" rel="stylesheet">
 
     <link href="assets/css/style.css" rel="stylesheet">
-
     <title>Guess the Anime Title!</title>
-</head>
 
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+
+</head>
 <body class="bg-dark">
     <div class="container mt-5 bg-warning border-thick p-5">
         <div class="row bg-transparent">
@@ -25,27 +26,31 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 text-center my-3" id="animeTitle">
-                <h1 class="text-light">Naruto!</h1>
+            <div class="col-sm-12 text-center my-3">
+                <span id="tryAgain"><h1>Sorry! Try again!</h1></span>
+                <span id="animeTitle"><h1 class="text-light">Naruto!</h1></span>
             </div>
         </div>
 
         <div class="row border border-secondary">
             <div class="col-sm-6 bg-light text-center p-4">
                 <div>
-                    
-                    
+                    <img src="assets/images/gameover.gif" id="gameOverImg" alt="Game Over!">
+                    <img src="assets/images/youwin.gif" id="youWinImg" alt="You Win!">
                     <img src="assets/images/animegirl_questionmark.png" class="bg-dark border border-dark img-fluid"
-                        alt="Anime girl with a question mark" width="200"></div>
+                        alt="Anime girl with a question mark" width="200" id="animeQuestion"></div>
             </div>
 
             <div class="col-sm-6 mx-auto bg-light p-4">
-                <p>right</p>
+                <h2>Press A-Z to make a guess!</h2>
+                <p>Current Wins: <span id="totalWin"></span></p>
+                <p>Guess the title: <span id="currentTitle"></span></p>
+                <p>Remaining Guesses: <span id="remainingGuesses"></span></p>
+                <p>Guessed Letters: <span id="guessedLetters"></span></p>
             </div>
         </div>
     </div>
-
-<script src="assets/javascript/game.js"></script>
+    
 </body>
 
 </html>
