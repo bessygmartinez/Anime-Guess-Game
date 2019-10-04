@@ -124,7 +124,7 @@ document.onkeyup = function (event) {
             // this is also to prevent the same letter being recorded twice 
             guessedLetters.push(userGuess);
             // guessRemaining reduces by one
-            guessesRemaining--;
+            //guessesRemaining--;
         }
         
         // if 'userGuess' equals to 'letters' at index i, assign 'letters' at index i to 'underscore' at the same location
@@ -239,7 +239,7 @@ function reset () {
     }
 
 
-    guessesRemaining = 15;
+    guessesRemaining = 10;
 
     // start with empty array
     guessedLetters = [];
