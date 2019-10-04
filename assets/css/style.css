@@ -12,10 +12,6 @@ h2 {
 
 #tryAgain, 
 #gameOverImg,
-#youWinImg {
+#youWinImg, {
      display: none;
     }
-
-.animewin {
-    display: none;
-}
