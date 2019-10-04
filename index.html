@@ -13,68 +13,28 @@
 
     <link href="assets/css/style.css" rel="stylesheet">
     <title>Guess the Anime Title!</title>
-
-    <script src="assets/javascript/game.js" type="text/javascript"></script>
-
 </head>
 
 <body class="bg-dark">
-    <div class="container mt-3 bg-warning border-thick p-5">
+    <div class="container mt-3 bg-warning border-thick pr-5 pt-3 pl-5 pb-5">
         <div class="row bg-transparent">
             <div class="col-sm-12 text-center bg-transparent m-0 p-0">
-                <h1 class="text-light display-1">guess the anime title</h1>
+                <h1 class="text-light display-1 m-0 p-0">guess the anime title</h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-12 text-center my-0">
-                <div id="tryAgain">
-                <img src="assets/images/tryagain.jpg" id="tryAgain" alt="You lose! Try again!" class="bg-dark border border-dark img-fluid mx-auto mb-2 p-0">
-                </div>
-                <span id="pressKey">
-                    <h2 class="text-dark">Press any key to start</h2>
-                </span>
-                <span id="animeTitle">
-                    <h1 class="text-light">Naruto!</h1>
-                </span>
+            <div class="col-sm-12 text-center my-2">
+                <h1 id="pressKey" class="text-light"></h1>                
+                    <h2 id="animeTitle" class="text-dark"></h2>
             </div>
         </div>
 
         <div class="row border border-secondary">
-            <div class="col-sm-6 bg-light text-center p-4">
-                <div>
-                    <img src="assets/images/gameover.gif" id="gameOverImg" alt="Game Over!"
-                        class="bg-dark border border-dark img-fluid">
-                    <img src="assets/images/youwin.gif" id="youWinImg" alt="You Win!"
-                        class="bg-dark border border-dark img-fluid">
-                    <img src="assets/images/animegirl_questionmark.png" class="bg-dark border border-dark img-fluid"
-                        alt="Anime girl with a question mark" width="250" id="animeQuestion">
+            <div class="col-sm-6 bg-light text-center pt-5 pb-5">
 
-                    <img src="assets/images/naruto.jpg" id="naruto" alt=""
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/evangelion.jpg" id="evangelion" alt=""
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/attackontitan.jpg" id="attackontitan" alt=""
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/shieldhero.jpg" id="shieldhero" alt="The Rising of the Shield Hero"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/onepiece.jpg" id="onepiece" alt="One Piece"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/sailormoon.jpg" id="sailormoon" alt="Sailor Moon"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/madeinabyss.jpg" id="madeinabyss" alt="Made In Abyss"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/myheroacademia.jpg" id="myheroacademia" alt="My Hero Academia"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/fullmetalalchemist.jpg" id="fullmetalalchemist" alt="Fullmetal Alchemist"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/dragonballz.jpg" id="dragonballz" alt="Dragon Ball Z"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/samuraichamploo.jpg" id="samuraichamploo" alt="Samurai Champloo"
-                        class="animewin bg-dark border border-dark img-fluid">
-                    <img src="assets/images/goblinslayer.jpg" id="goblinslayer" alt="Goblin Slayer"
-                        class="animewin bg-dark border border-dark img-fluid">
-                </div>
+                    <img id="imageHTML" src="assets/images/animegirl_questionmark.png" class="bg-dark border border-dark img-fluid">
+
             </div>
 
             <div class="col-sm-6 text-left bg-light p-4">
@@ -82,17 +42,17 @@
                 <br>
                 <h4>Current Wins: <span id="totalWin"></span></h4>
                 <br>
-                <h4>Guess the Title: <br>
-                    <span id="currentTitle"></span></h4> <br>
+                <h4>Current Losses: <span id="totalLosses"></span></h4>
+                <br>
+                <h4>Guess the Title: <br><br>
+                <span id="currentTitle"><br></span></h4> <br>
                 <h4>Remaining Guesses: <span id="remainingGuesses"></span></h4>
                 <h4>Guessed Letters: <span id="guessedLetters"></span></h4>
             </div>
         </div>
     </div>
 
-    <script>
-        updateDisplay();
-    </script>
+<script src="assets/javascript/game.js" type="text/javascript"></script>
 
 </body>
 
