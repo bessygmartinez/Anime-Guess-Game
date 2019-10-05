@@ -25,34 +25,37 @@
 
         <div class="row">
             <div class="col-sm-12 text-center my-2">
-                <h1 id="pressKey" class="text-light"></h1>                
-                    <h2 id="animeTitle" class="text-dark"></h2>
+                <h1 id="pressKey" class="text-danger"></h1>
+                <h1 id="animeTitle" class="text-dark"></h2>
             </div>
         </div>
 
         <div class="row border border-secondary">
-            <div class="col-sm-6 bg-light text-center pt-5 pb-5">
+            <div class="col-sm-6 bg-light text-center pt-4 pb-5">
 
-                    <img id="imageHTML" src="assets/images/animegirl_questionmark.png" class="bg-dark border border-dark img-fluid">
+                <img id="imageHTML" src="assets/images/animegirl_questionmark.png"
+                    class="bg-dark border border-dark img-fluid">
 
             </div>
 
             <div class="col-sm-6 text-left bg-light p-4">
-                <h2>Press A-Z to make a guess!</h2>
+                    <img src="assets/images/youWin.gif" class="bg-dark border border-dark img-fluid" id="youWin">
+                    <img src="assets/images/gameover.gif" class="bg-dark border border-dark img-fluid" id="gameOver">
+                <h2 id="pressAZ">Press A-Z to make a guess!</h2>
                 <br>
                 <h4>Current Wins: <span id="totalWin"></span></h4>
                 <br>
                 <h4>Current Losses: <span id="totalLosses"></span></h4>
                 <br>
                 <h4>Guess the Title: <br><br>
-                <span id="currentTitle"><br></span></h4> <br>
+                    <span id="currentTitle"><br></span></h4> <br>
                 <h4>Remaining Guesses: <span id="remainingGuesses"></span></h4>
                 <h4>Guessed Letters: <span id="guessedLetters"></span></h4>
             </div>
         </div>
     </div>
 
-<script src="assets/javascript/game.js" type="text/javascript"></script>
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
 
 </body>
 
