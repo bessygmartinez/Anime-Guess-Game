@@ -138,7 +138,7 @@ document.onkeyup = function (event) {
 
             // display anime name
             animeName = individualMainInfo.anime;
-            document.getElementById("animeTitle").innerHTML = animeName;
+            document.getElementById("animeTitle").innerHTML = animeName.toUpperCase();
 
             // display the instruction below
             instruction = "Press any key to play again!";
@@ -164,7 +164,7 @@ document.onkeyup = function (event) {
 
             // display anime name
             animeName = individualMainInfo.anime;
-            document.getElementById("animeTitle").innerHTML = animeName;
+            document.getElementById("animeTitle").innerHTML = animeName.toUpperCase();
 
             // display the instruction below
             instruction = "Press any key to try again!";
