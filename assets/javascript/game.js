@@ -114,7 +114,7 @@ document.onkeyup = function (event) {
         if (guessedLetters.indexOf(userGuess) === -1) {
 
             // if the letter wasn't already pressed, the player's letter goes into the array and prevents repeat
-            guessedLetters.push(userGuess);
+            guessedLetters.push("&nbsp;" + userGuess.toUpperCase());
 
             // Remaining guesses goes down by one
             guessesRemaining--;
@@ -124,7 +124,7 @@ document.onkeyup = function (event) {
         // to replace 'underscore' at index i with the correct character
         for (let i = 0; i < letters.length; i++) {
             if (userGuess.toLowerCase() === letters[i].toLowerCase()) {
-                underscores[i] = letters[i];
+                underscores[i] = letters[i]
             }
         }
 
