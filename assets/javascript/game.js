@@ -1,4 +1,4 @@
-// Create a library of anime titles and images
+// Anime titles and images
 let animeInfo = [
     {
         anime: "Naruto",
@@ -52,22 +52,21 @@ let animeInfo = [
 ]
 
 //Variables
-var letters;
-var guessesRemaining;
-var wins;
-var losses;
-var underscores;
-var guessedLetters;
-var individualMainInfo;
-var randomme;
-var animeName;
-var connector;
-var instruction;
-var directionsText;
+let letters;
+let guessesRemaining;
+let wins;
+let losses;
+let underscores;
+let guessedLetters;
+let individualMainInfo;
+let randomme;
+let animeName;
+let connector;
+let instruction;
+let directionsText;
 
-// create a variable to pause the screen after winning and wait for user to click for the next game
-var pauseWinLoss;
-
+// Pauses screen and waits for player to press key
+let pauseWinLoss;
 
 
 // Fired when page loads
@@ -77,7 +76,7 @@ window.onload = function () {
     wins = 0;
     losses = 0;
 
-    // When the page is loaded, the screen doesn't need to pause at winning
+    // When page loads, the game doesn't need to be paused.
     pauseWinLoss = false;
     
     reset();
@@ -86,67 +85,63 @@ window.onload = function () {
 // When player types a key, the functions fire
 document.onkeyup = function (event) {
 
-    // userGuess stores the key that is being clicked.
-    var userGuess = event.key;
+    // stores key that player presses
+    let userGuess = event.key;
 
     directionsText = document.getElementById("pressKey");
     directionsText.textContent = "";
 
-    // pauseWinLoss is true when the screen pauses to wait for user's input (click) for the next game
-    // .onkeyup triggers pauseWinLoss
+    // if pauseWinLoss is true, game will reset
     if(pauseWinLoss){
-        // check if pauseWinLoss is true
-        // if true, start a new game 
         reset();
 
-        // set pauseWinLoss to false so that user can continue playing game
-        // if pauseWinLoss is true, user will start a new game for every key pressed.
+        // set pauseWinLoss to false so that player can continue playing
         pauseWinLoss = false;
 
-        // to hide the instruction after the game starts
+        // Hides "Press any key" when game begins
         instruction = "";
         document.getElementById("pressKey").innerHTML = instruction;
 
-        // exit out of the function
-        // or else without 'return', it will continue with the code below
-        // which means if the user click any key it will register to the next game
+        // exit function
         return;
     }
     
 
-    // check if userGuess is an alphabet
-    // /i means case insensitive
+    // Checks for alpha characters
     if (userGuess.match(/[a-z]/i)) {
-        // guessedLetters is an array containing strings
-        // index of -1 means that if userGuess does not match any letter in guessedLetter
+
+        // index of -1 means that if userGuess does not match any letter in guessedLetter...
         if (guessedLetters.indexOf(userGuess) === -1) {
-            // if the letter is not already there in guessedLetter, add userGuess's letter into the array 
-            // this is also to prevent the same letter being recorded twice 
+
+            // if the letter wasn't already pressed, the player's letter goes into the array and prevents repeat
             guessedLetters.push(userGuess);
-            // guessRemaining reduces by one
-            //guessesRemaining--;
+
+            // Remaining guesses goes down by one
+            guessesRemaining--;
         }
         
         // if 'userGuess' equals to 'letters' at index i, assign 'letters' at index i to 'underscore' at the same location
         // to replace 'underscore' at index i with the correct character
-        for (var i = 0; i < letters.length; i++) {
+        for (let i = 0; i < letters.length; i++) {
             if (userGuess.toLowerCase() === letters[i].toLowerCase()) {
                 underscores[i] = letters[i];
             }
         }
 
-        // if user guesses title correctly
+        // if user guesses title correctly...
         if (underscores.toString() === letters.toString()) {
+
             // display anime image
             animeImage = individualMainInfo.image;
             document.getElementById("imageHTML").setAttribute("src", animeImage);
+            document.getElementById("youWin").style.cssText = ("display:block;");
 
             // display anime name
             animeName = individualMainInfo.anime;
             document.getElementById("animeTitle").innerHTML = animeName;
 
             // display the instruction below
-            instruction = "Press any key to start";
+            instruction = "Press any key to play again!";
             document.getElementById("pressKey").innerHTML = instruction;
             
             // increment win by 1
@@ -165,13 +160,14 @@ document.onkeyup = function (event) {
             // display anime image
             animeImage = individualMainInfo.image;
             document.getElementById("imageHTML").setAttribute("src", animeImage);
+            document.getElementById("gameOver").style.cssText = ("display: block;");
 
             // display anime name
             animeName = individualMainInfo.anime;
             document.getElementById("animeTitle").innerHTML = animeName;
 
             // display the instruction below
-            instruction = "Press any key to start";
+            instruction = "Press any key to try again!";
             document.getElementById("pressKey").innerHTML = instruction;
 
             // increment losses by 1
@@ -212,13 +208,14 @@ function updateFields() {
 
 // to start a new game
 function reset () {
+    
     // animeInfo.length = the number anime in the library
     // Math.floor * animeInfo.length: anime index from 0 to (animeInfo.length - 1)
 
     individualMainInfo = animeInfo[Math.floor(Math.random() * animeInfo.length)];
 
     // anime name for the random anime
-    randomAnime = individualMainInfo.anime
+    randomAnime = individualMainInfo.anime;
 
     // split the anime name into letter
     letters = randomAnime.split(""); // empty string ""
@@ -228,8 +225,8 @@ function reset () {
     underscores = letters.slice();
 
     // Change the character in underscores array into underscore "_"
-    for (var i = 0; i < underscores.length; i++) {
-        var character = underscores[i];
+    for (let i = 0; i < underscores.length; i++) {
+        let character = underscores[i];
 
         // Check if the character is an alphabet 
         // if true, replace character at index i with underscore "_"
@@ -237,9 +234,9 @@ function reset () {
             underscores[i] = "_";
         }
     }
+    
 
-
-    guessesRemaining = 10;
+    guessesRemaining = 15;
 
     // start with empty array
     guessedLetters = [];
@@ -249,6 +246,9 @@ function reset () {
     // reset anime image
     animeImage = individualMainInfo.image;
     document.getElementById("imageHTML").setAttribute("src", "assets/images/animegirl_questionmark.png");
+    document.getElementById("youWin").style.cssText = ("display:none;");
+    document.getElementById("gameOver").style.cssText = ("display:none;");
+    document.getElementById("pressAZ").style.cssText = ("display:none;");
 
     // erase me anime name
     animeName = "";
