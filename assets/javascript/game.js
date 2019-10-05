@@ -114,7 +114,7 @@ document.onkeyup = function (event) {
         if (guessedLetters.indexOf(userGuess) === -1) {
 
             // if the letter wasn't already pressed, the player's letter goes into the array and prevents repeat
-            guessedLetters.push("&nbsp;" + userGuess.toUpperCase());
+            guessedLetters.push(userGuess);
 
             // Remaining guesses goes down by one
             guessesRemaining--;
@@ -187,7 +187,7 @@ document.onkeyup = function (event) {
             // update fields so that the user can see
             // e.g. the Letter Already Guessed
         } else {
-            updateFields()
+            updateFields();
         }
     } 
 }
