@@ -82,6 +82,13 @@ window.onload = function () {
     reset();
 }
 
+    directionsText = document.getElementById("pressKey");
+    directionsText.textContent = "Press any key to start!";
+
+    //Gets link for audio
+    const youWinAudio = new Audio ("assets/sounds/you-win-fanfare.mp3");
+    const youLoseAudio = new Audio ("assets/sounds/you-lose-sound.mp3");
+
 // When player types a key, the functions fire
 document.onkeyup = function (event) {
 
@@ -94,6 +101,12 @@ document.onkeyup = function (event) {
     // if pauseWinLoss is true, game will reset
     if(pauseWinLoss){
         reset();
+
+        youWinAudio.pause();
+        youWinAudio.currentTime = 0;
+
+        youLoseAudio.pause();
+        youLoseAudio.currentTime =0;
 
         // set pauseWinLoss to false so that player can continue playing
         pauseWinLoss = false;
@@ -139,6 +152,7 @@ document.onkeyup = function (event) {
             // display anime name
             animeName = individualMainInfo.anime;
             document.getElementById("animeTitle").innerHTML = animeName.toUpperCase();
+            youWinAudio.play();
 
             // display the instruction below
             instruction = "Press any key to play again!";
@@ -161,6 +175,7 @@ document.onkeyup = function (event) {
             animeImage = individualMainInfo.image;
             document.getElementById("imageHTML").setAttribute("src", animeImage);
             document.getElementById("gameOver").style.cssText = ("display: block;");
+            youLoseAudio.play();
 
             // display anime name
             animeName = individualMainInfo.anime;
