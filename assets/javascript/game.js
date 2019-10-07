@@ -79,7 +79,11 @@ let animeInfo = [
     {
         anime: "Psycho-Pass",
         image: "assets/images/psychopass.jpg",
-    },   
+    },
+    {
+        anime: "Parasyte -the maxim-",
+        image: "assets/images/parasyte.jpg",
+    },
 ]
 
 //Variables
