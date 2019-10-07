@@ -212,7 +212,7 @@ document.onkeyup = function (event) {
             document.getElementById("animeTitle").innerHTML = animeName.toUpperCase();
 
             // display the instruction below
-            instruction = "Press any key to try again!";
+            instruction = "Too bad. Press any key to try again!";
             document.getElementById("pressKey").innerHTML = instruction;
 
             // increment losses by 1
