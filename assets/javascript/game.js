@@ -47,8 +47,39 @@ let animeInfo = [
     {
         anime: "Goblin Slayer",
         image: "assets/images/goblinslayer.jpg",
-    }
-   
+    },
+    {
+        anime: "Sword Art Online",
+        image: "assets/images/SAO.jpg",
+    },
+    {
+        anime: "The Seven Deadly Sins",
+        image: "assets/images/sevendeadlysins.jpg",
+    },
+    {
+        anime: "Yuri On Ice!!",
+        image: "assets/images/yurionice.jpg",
+    },
+    {
+        anime: "The Ancient Magus' Bride",
+        image: "assets/images/ancientmagus.jpg",
+    },
+    {
+        anime: "Death Note",
+        image: "assets/images/deathnote.jpg",
+    },
+    {
+        anime: "Cowboy Bebop",
+        image: "assets/images/cowboybebop.jpg",
+    },
+    {
+        anime: "Steins;Gate",
+        image: "assets/images/steinsgate.jpg",
+    },
+    {
+        anime: "Psycho-Pass",
+        image: "assets/images/psychopass.jpg",
+    },   
 ]
 
 //Variables
@@ -59,7 +90,6 @@ let losses;
 let underscores;
 let guessedLetters;
 let individualMainInfo;
-let randomme;
 let animeName;
 let connector;
 let instruction;
@@ -155,7 +185,7 @@ document.onkeyup = function (event) {
             youWinAudio.play();
 
             // display the instruction below
-            instruction = "Press any key to play again!";
+            instruction = "Great job! Press any key to play again!";
             document.getElementById("pressKey").innerHTML = instruction;
             
             // increment win by 1
